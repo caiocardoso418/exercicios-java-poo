@@ -29,7 +29,7 @@ public class Main {
 	    }
 		
 	    System.out.printf("MAIOR VaALOR = %.1f\n", maior);
-	    System.out.printf("POSICAO DO MAIOR VALOR = %d\n", posmaior);
+	    System.out.printf("POSICAO DO MAIOR VALOR = %d\n", posmaior+1);
 
 		
 		
