@@ -30,15 +30,31 @@ public class Main {
 			double salary = sc.nextDouble();
 			
 			list.add(new Funcionario(id, name, salary));
-			
+		}
 			System.out.print("Digite quem tera o aumento de salario: ");
 			int idAumento = sc.nextInt();
 			
-			Funcionario emp = list.stream().filter(x -> x.getId() == idAumento).findFirst().orElse(null);
+			Funcionario deQual = list.stream().filter(x -> x.getId() == idAumento).findFirst().orElse(null);
+			
+			int porc;
+			
+			if(deQual != null) {
+				System.out.println("Qual sera a porcentagem do aumento do salario: ");
+				porc = sc.nextInt();
+				deQual.increaseSalary(porc);
+			}else {
+				System.out.println("Funcionairo ainda nao cadastrado");
+			}
+			
+			 System.out.println();
+		        System.out.println("List of employees:");
+		        for (Funcionario obj : list) {
+		            System.out.println(obj); 
+		        }
 			
 			
 			
-		
+		sc.close();
             
             
             
@@ -48,6 +64,5 @@ public class Main {
 		
 		
 		
-		sc.close();
 	}
-}
+
